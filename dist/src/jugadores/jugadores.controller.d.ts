@@ -1,0 +1,139 @@
+import { JugadoresService } from './jugadores.service';
+import { CreateJugadorDto } from '../dto/create-card-jugador.dto';
+import { UpdateJugadorDto } from '../dto/update-card-jugador.dto';
+export declare class JugadoresController {
+    private readonly jugadoresService;
+    constructor(jugadoresService: JugadoresService);
+    findAll(): import("@prisma/client").Prisma.PrismaPromise<({
+        seleccion: {
+            pais: string;
+            confederacion: string;
+            campeonatos: number;
+            escudo: string;
+            createdAt: Date;
+            updatedAt: Date;
+            id: number;
+        };
+    } & {
+        createdAt: Date;
+        updatedAt: Date;
+        id: number;
+        nombre: string;
+        edad: number;
+        posicion: string | null;
+        dribling: number;
+        velocidad: number;
+        regate: number;
+        defensa: number | null;
+        tiro: number | null;
+        pase: number | null;
+        fisico: number | null;
+        urlImagen: string;
+        seleccionId: number;
+    })[]>;
+    findBySeleccion(seleccionId: string): import("@prisma/client").Prisma.PrismaPromise<({
+        seleccion: {
+            pais: string;
+            confederacion: string;
+            campeonatos: number;
+            escudo: string;
+            createdAt: Date;
+            updatedAt: Date;
+            id: number;
+        };
+    } & {
+        createdAt: Date;
+        updatedAt: Date;
+        id: number;
+        nombre: string;
+        edad: number;
+        posicion: string | null;
+        dribling: number;
+        velocidad: number;
+        regate: number;
+        defensa: number | null;
+        tiro: number | null;
+        pase: number | null;
+        fisico: number | null;
+        urlImagen: string;
+        seleccionId: number;
+    })[]>;
+    findOne(id: string): import("@prisma/client").Prisma.Prisma__JugadorClient<({
+        seleccion: {
+            pais: string;
+            confederacion: string;
+            campeonatos: number;
+            escudo: string;
+            createdAt: Date;
+            updatedAt: Date;
+            id: number;
+        };
+    } & {
+        createdAt: Date;
+        updatedAt: Date;
+        id: number;
+        nombre: string;
+        edad: number;
+        posicion: string | null;
+        dribling: number;
+        velocidad: number;
+        regate: number;
+        defensa: number | null;
+        tiro: number | null;
+        pase: number | null;
+        fisico: number | null;
+        urlImagen: string;
+        seleccionId: number;
+    }) | null, null, import("@prisma/client/runtime/library").DefaultArgs, import("@prisma/client").Prisma.PrismaClientOptions>;
+    create(dto: CreateJugadorDto): import("@prisma/client").Prisma.Prisma__JugadorClient<{
+        createdAt: Date;
+        updatedAt: Date;
+        id: number;
+        nombre: string;
+        edad: number;
+        posicion: string | null;
+        dribling: number;
+        velocidad: number;
+        regate: number;
+        defensa: number | null;
+        tiro: number | null;
+        pase: number | null;
+        fisico: number | null;
+        urlImagen: string;
+        seleccionId: number;
+    }, never, import("@prisma/client/runtime/library").DefaultArgs, import("@prisma/client").Prisma.PrismaClientOptions>;
+    update(id: string, dto: UpdateJugadorDto): import("@prisma/client").Prisma.Prisma__JugadorClient<{
+        createdAt: Date;
+        updatedAt: Date;
+        id: number;
+        nombre: string;
+        edad: number;
+        posicion: string | null;
+        dribling: number;
+        velocidad: number;
+        regate: number;
+        defensa: number | null;
+        tiro: number | null;
+        pase: number | null;
+        fisico: number | null;
+        urlImagen: string;
+        seleccionId: number;
+    }, never, import("@prisma/client/runtime/library").DefaultArgs, import("@prisma/client").Prisma.PrismaClientOptions>;
+    remove(id: string): import("@prisma/client").Prisma.Prisma__JugadorClient<{
+        createdAt: Date;
+        updatedAt: Date;
+        id: number;
+        nombre: string;
+        edad: number;
+        posicion: string | null;
+        dribling: number;
+        velocidad: number;
+        regate: number;
+        defensa: number | null;
+        tiro: number | null;
+        pase: number | null;
+        fisico: number | null;
+        urlImagen: string;
+        seleccionId: number;
+    }, never, import("@prisma/client/runtime/library").DefaultArgs, import("@prisma/client").Prisma.PrismaClientOptions>;
+}

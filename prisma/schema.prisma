@@ -1,0 +1,39 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Seleccion {
+  id              Int        @id @default(autoincrement())
+  pais            String
+  confederacion   String     
+  campeonatos     Int         @default(0) 
+  escudo          String      // URL del escudo
+  jugadores       Jugador[]
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+}
+
+model Jugador {
+  id            Int        @id @default(autoincrement())
+  nombre        String
+  edad          Int
+  posicion      String?
+  dribling      Int
+  velocidad     Int
+  regate        Int
+  defensa       Int?
+  tiro          Int?
+  pase          Int?
+  fisico        Int?
+  urlImagen     String
+  seleccionId   Int
+  seleccion     Seleccion   @relation(fields: [seleccionId], references: [id])
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
